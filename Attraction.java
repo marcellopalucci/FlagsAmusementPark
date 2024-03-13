@@ -16,9 +16,7 @@ public class Attraction implements Admittable{
     public Attraction(String name, double admissionFee){
         this.name = validName(name);
         this.admissionFee = (admissionFee >= 0) ? admissionFee : 0;
-
-        //this or initialize up top???!!!! check
-        //this.visitors = new Group[5];
+        this.visitors = new Group[5];
     }
 
     /**
@@ -70,6 +68,14 @@ public class Attraction implements Admittable{
         return rating;
     }
     private String validName(String name){
-        return (name == null || name.equals("")) ? String.format("No name") : name;
+        return (name == null || name.isBlank()) ? String.format("No name") : name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getAdmissionFee() {
+        return admissionFee;
     }
 }

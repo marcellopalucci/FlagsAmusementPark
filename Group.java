@@ -1,3 +1,4 @@
+package FlagsAmusementPark;
 
 public class Group {
 
